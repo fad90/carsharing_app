@@ -4,6 +4,7 @@ import styles from './app.module.scss';
 import Content from '../content';
 import Sidebar from '../sidebar';
 import Slider from '../slider';
+import BurgerMenu from '../burger-menu'
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <Sidebar />
         <Content />
         <Slider />
+        <BurgerMenu />
       </div>
   );
 }

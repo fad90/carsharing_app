@@ -1,10 +1,20 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./sidebar.module.scss";
+// import { connect } from "react-redux";
 
 export default function Sidebar() {
+  const dispatch = useDispatch()
+  const menuActive = useSelector(state => state.menuActive)
+  
+
+  const menuOpen = () => {
+    dispatch({type:"OPEN_MENU"})
+  }
+
   return (
     <>
-      <button className={styles.hamburger}>
+      <button className={styles.hamburger} onClick={menuOpen}>
         <svg
           width="32"
           height="32"
@@ -46,3 +56,10 @@ export default function Sidebar() {
     </>
   );
 }
+
+// function mapStateToProps(state) {
+//   console.log('mapStateToProps > ', state);
+//   return {
+//     openMenu: state.openMenu
+//   }
+// }
