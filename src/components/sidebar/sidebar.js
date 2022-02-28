@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./sidebar.module.scss";
-// import { connect } from "react-redux";
 
 export default function Sidebar() {
   const dispatch = useDispatch()
