@@ -13,7 +13,7 @@
 }
 .menu {
   height: 100vh;
-  width: calc(50% + 35px);
+  width: calc(53% + 35px);
   background-color: #111518;
 }
 .cross {
@@ -34,6 +34,9 @@
   font-size: 32px;
   line-height: 37px;
   color: #ffffff;
+  &:hover {
+    color: #0EC261;
+  }
 }
 .nav {
   margin: 7px 0;
@@ -43,4 +46,25 @@
 }
 .social_link {
   margin-right: 24px;
+}
+
+@media (max-width: 1023px) {
+  .menu {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .cross {
+    margin: 20px;
+  }
+  .content {
+    padding-left: 28px;
+  }
+  .link {
+    font-size: 22px;
+    line-height: 26px;
+  }
+  .nav {
+    margin: 15px 0;
+  }
 }

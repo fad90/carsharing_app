@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./slider.module.scss";
 import img1 from "../../assets/images/img1.png";
+import arrowLeft from "../../assets/svg/Vector_left.svg";
+import arrowRight from "../../assets/svg/Vector_right.svg";
 
 export default function Slider() {
   return (
@@ -8,21 +10,7 @@ export default function Slider() {
       <div className={styles.wrapper}>
         <img className={styles.img} src={img1} alt="image" />
         <button className={styles.btnLeft}>
-          <svg
-            width="10"
-            height="20"
-            viewBox="0 0 10 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M9 1L1 10L9 19"
-              stroke="#EEEEEE"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <img src={arrowLeft} alt="arrow" />
         </button>
         <div className={styles.content}>
           <h3 className={styles.title}>Бесплатная парковка</h3>
@@ -33,21 +21,7 @@ export default function Slider() {
           <button className={styles.button}>Подробнее</button>
         </div>
         <button className={styles.btnRight}>
-          <svg
-            width="10"
-            height="20"
-            viewBox="0 0 10 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1 1L9 10L1 19"
-              stroke="#EEEEEE"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <img src={arrowRight} alt="arrow" />
         </button>
         <div className={styles.dots}>
           <button className={styles.dot}></button>
