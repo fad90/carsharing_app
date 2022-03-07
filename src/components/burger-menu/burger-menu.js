@@ -5,9 +5,12 @@ import { closeMenu } from "../../redux/actions";
 import { active } from "../../redux/selectors";
 
 import cross from '../../assets/svg/cross.svg';
-import telegramLogo from '../../assets/svg/telegram.svg';
-import facebookLogo from '../../assets/svg/Facebook.svg';
-import instagramLogo from '../../assets/svg/Instagram.svg';
+import { ReactComponent as TelegramLogo } from "../../assets/svg/telegram.svg";
+import { ReactComponent as FacebookLogo } from "../../assets/svg/Facebook.svg";
+import { ReactComponent as InstagramLogo } from "../../assets/svg/Instagram.svg";
+// import telegramLogo from '../../assets/svg/telegram.svg';
+// import facebookLogo from '../../assets/svg/Facebook.svg';
+// import instagramLogo from '../../assets/svg/Instagram.svg';
 
 export default function BurgerMenu() {
   const dispatch = useDispatch();
@@ -48,15 +51,16 @@ export default function BurgerMenu() {
           </ul>
           <div className={styles.social}>
             <a href="#" className={styles.social_link}>
-            <img src={telegramLogo} alt="telegram" />
+            <TelegramLogo className={styles.social_logo}/>
             </a>
             <a href="#" className={styles.social_link}>
-            <img src={facebookLogo} alt="facebook" />
+            <FacebookLogo className={styles.social_logo}/>
             </a>
             <a href="#" className={styles.social_link}>
-            <img src={instagramLogo} alt="instagram" />
+            <InstagramLogo className={styles.social_logo}/>
             </a>
           </div>
+          <div className={styles.language}><button className={styles.language_button}>Eng</button></div>
         </div>
       </div>
     </div>

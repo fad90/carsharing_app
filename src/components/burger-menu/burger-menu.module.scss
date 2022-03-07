@@ -35,7 +35,7 @@
   line-height: 37px;
   color: #ffffff;
   &:hover {
-    color: #0EC261;
+    color: #0ec261;
   }
 }
 .nav {
@@ -46,6 +46,14 @@
 }
 .social_link {
   margin-right: 24px;
+}
+.social_logo {
+  &:hover * {
+    fill: #0ec261;
+  }
+}
+.language {
+  display: none;
 }
 
 @media (max-width: 1023px) {
@@ -66,5 +74,16 @@
   }
   .nav {
     margin: 15px 0;
+  }
+  .language {
+    position: absolute;
+    display: block;
+    bottom: 28px;
+  }
+  .language_button {
+    color: #0ec261;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 15px;
   }
 }

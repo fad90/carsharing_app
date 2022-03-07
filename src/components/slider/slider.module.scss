@@ -38,9 +38,15 @@
   font-size: 18px;
   line-height: 21px;
   color: #eeeeee;
-  background: linear-gradient(90deg, #13493f 0%, #0c7b1b 100%);
+  background: linear-gradient(90deg, #13493F 0%, #0C7B1B 100%);
   border-radius: 4px;
   padding: 12px 35px;
+  &:hover {
+    background: linear-gradient(90deg, #0B934A 2.61%, #026E47 112.6%);
+  }
+  &:active {
+    background: linear-gradient(90deg, #076432 2.61%, #013C27 112.6%);
+  }
 }
 .btnLeft {
   position: absolute;

@@ -55,6 +55,12 @@
   border-radius: 8px;
   padding: 11px 46px;
   margin: 75px 0 0 0;
+  &:hover {
+    background: linear-gradient(90deg, #0B934A 2.61%, #026E47 112.6%);
+  }
+  &:active {
+    background: linear-gradient(90deg, #076432 2.61%, #013C27 112.6%);
+  }
 }
 .footer {
   display: flex;
