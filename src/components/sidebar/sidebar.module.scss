@@ -1,0 +1,49 @@
+.sidebar {
+  display: flex;
+  width: 64px;
+  background: #151b1f;
+  height: 100%;
+  align-items: flex-end;
+}
+.hamburger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  margin: 32px 16px;
+}
+.language {
+  margin: 13px 5px;
+}
+.language_button {
+  background: none;
+  color: #0ec261;
+  border: none;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 16px 12px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  &:hover {
+    border: 1px solid #eeeeee;
+    color: #eee;
+  }
+  &:active {
+    color: #0EC261;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+  .hamburger {
+    margin: 16px;
+  }
+  .logo * {
+    stroke: #151b1f;
+  }
+}
