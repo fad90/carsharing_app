@@ -8,9 +8,6 @@ import cross from '../../assets/svg/cross.svg';
 import { ReactComponent as TelegramLogo } from "../../assets/svg/telegram.svg";
 import { ReactComponent as FacebookLogo } from "../../assets/svg/Facebook.svg";
 import { ReactComponent as InstagramLogo } from "../../assets/svg/Instagram.svg";
-// import telegramLogo from '../../assets/svg/telegram.svg';
-// import facebookLogo from '../../assets/svg/Facebook.svg';
-// import instagramLogo from '../../assets/svg/Instagram.svg';
 
 export default function BurgerMenu() {
   const dispatch = useDispatch();
