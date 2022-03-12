@@ -1,0 +1,47 @@
+.order {
+  width: 100%;
+  max-width: 1344px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 0;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 30px;
+  color: #0ec261;
+}
+.location {
+  display: flex;
+}
+.location_text {
+  margin-left: 7.54px;
+  font-size: 14px;
+  color: #999999;
+}
+
+.menu {
+}
+.nav {
+  display: flex;
+  align-items: center;
+}
+.link {
+  margin-right: 16px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+  cursor: pointer;
+  &:hover {
+    color: #0ec261;
+  }
+}
+.vector {
+  margin-right: 16px;
+}
