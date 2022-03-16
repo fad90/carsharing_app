@@ -1,15 +1,17 @@
 import React from "react";
 import styles from "./order-page.module.scss";
 import location from "../../assets/svg/Group.svg";
-import { Routes, Route, Link, Outlet } from "react-router-dom";
+import { Routes, Route, NavLink, Outlet } from "react-router-dom";
 import { ReactComponent as Vector } from "../../assets/svg/Vector.svg";
 
 import LocationStep from "../location-step";
 import ModelStep from "../model-step";
 import AdditionStep from "../addition-step";
 import TotalStep from "../total-step";
+import OrderDetail from "../order-detail/order-detail";
 
-
+const setActive = ({ isActive }) =>
+  isActive ? `${styles.link} ${styles.link_active}` : `${styles.link}`;
 export default function OrderPage() {
   return (
     <div className={styles.order}>
@@ -22,38 +24,33 @@ export default function OrderPage() {
           <div className={styles.location_text}>Ульяновск</div>
         </div>
       </header>
-      
+
       <div className={styles.menu}>
+        <div className={styles.line}></div>
         <nav className={styles.nav}>
-          <Link to="location" className={styles.link}>
+          <NavLink to="location" className={setActive}>
             Местоположение
-          </Link>
+          </NavLink>
           <Vector className={styles.vector} />
-          <Link to="model" className={styles.link}>
+          <NavLink to="model" className={setActive}>
             Модель
-          </Link>
+          </NavLink>
           <Vector className={styles.vector} />
-          <Link to="addition" className={styles.link}>
+          <NavLink to="addition" className={setActive}>
             Дополнительно
-          </Link>
+          </NavLink>
           <Vector className={styles.vector} />
-          <Link to="total" className={styles.link}>
+          <NavLink to="total" className={setActive}>
             Итого
-          </Link>
+          </NavLink>
         </nav>
+        <div className={styles.line}></div>
       </div>
-
-      {/* <Routes> */}
-        {/* <Route path="/" element={<BreadCrumbs />}> */}
-          {/* <Route path="location" element={<LocationStep />} />
-          <Route path="model" element={<ModelStep />} />
-          <Route path="addition" element={<AdditionStep />} />
-          <Route path="total" element={<TotalStep />} /> */}
-        {/* </Route> */}
-      {/* </Routes> */}
-
-      <Outlet />
-
+      <div className={styles.container}>
+        <Outlet />
+        <div className={styles.line_vertical}></div>
+        <OrderDetail />
+      </div>
     </div>
   );
 }

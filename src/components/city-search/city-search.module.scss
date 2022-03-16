@@ -1,0 +1,41 @@
+.city {
+    display: flex;
+    position: relative;
+    max-width: 320px;
+    justify-content: flex-end;
+  }
+  .dropdown_city {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 224px;
+    max-height: 100px;
+    overflow-y: scroll;
+    border: 1px solid #eee;
+    z-index: 1;
+  }
+  .text_city {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #121212;
+    margin-right: 8px;
+  }
+  .input_city {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #999;
+    width: 224px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #121212;
+  }
+  
+  .dropdown_item {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 16px;
+      color: #121212;
+  }
+  

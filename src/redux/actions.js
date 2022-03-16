@@ -30,3 +30,13 @@ export const firstSlide = (first) => ({
   type: "FIRST_SLIDE",
   payload: first,
 });
+
+export const addCities = (citiesArray) => ({
+  type: "ADD_CITIES",
+  payload: citiesArray,
+})
+
+export const addPoints = (pointsArray) => ({
+  type: "ADD_POINTS",
+  payload: pointsArray,
+})
