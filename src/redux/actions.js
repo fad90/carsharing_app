@@ -40,3 +40,16 @@ export const addPoints = (pointsArray) => ({
   type: "ADD_POINTS",
   payload: pointsArray,
 })
+
+export const openCity = () => ({
+  type: "OPEN_CITY",
+});
+
+export const openPoint = () => ({
+  type: "OPEN_POINT",
+});
+
+export const cityText = (target) => ({
+  type: "CITY_TEXT",
+  payload: target,
+});

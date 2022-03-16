@@ -13,7 +13,12 @@
   max-height: 100px;
   overflow-y: scroll;
   border: 1px solid #eee;
+  background-color: #fff;
   z-index: 1;
+  display: none;
+  &.active {
+    display: block;
+  }
 }
 .text_point {
   font-weight: 300;
