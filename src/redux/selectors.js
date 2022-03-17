@@ -8,3 +8,6 @@ export const cityOpen = (state) => state.orderReducer.cityOpen;
 export const pointOpen = (state) => state.orderReducer.pointOpen;
 
 export const inputCity = (state) => state.orderReducer.inputCity;
+
+export const cars = (state) => state.dataReducer.cars;
+export const category = (state) => state.dataReducer.category;

@@ -18,3 +18,11 @@ export function getCities() {
 export function getPoints() {
   return getResource("/db/point");
 }
+
+export function getCars() {
+  return getResource("/db/car");
+}
+
+export function getCategory() {
+  return getResource("/db/category");
+}

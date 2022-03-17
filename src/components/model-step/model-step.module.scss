@@ -1,4 +1,41 @@
 .model {
-    width: 100%;
-    padding: 32px 0;
-  }
+  width: 100%;
+  padding: 32px 0;
+}
+.categories {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.category {
+  display: flex;
+  margin-right: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+.category_circle {
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  border: 1px solid #999999;
+  border-radius: 50px;
+}
+.category_text {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+}
+
+.models {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  padding: 16px;
+  width: 50%;
+}
+.img {
+  max-width: 256px;
+  width: 100%;
+}

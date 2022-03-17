@@ -1,6 +1,8 @@
 const defaultState = {
   cities: [],
   points: [],
+  cars: [],
+  category: [],
 };
 
 export const dataReducer = (state = defaultState, action) => {
@@ -9,6 +11,10 @@ export const dataReducer = (state = defaultState, action) => {
       return { ...state, cities: [...state.cities, ...action.payload] };
     case "ADD_POINTS":
       return { ...state, points: [...state.points, ...action.payload] };
+    case "ADD_CARS":
+      return { ...state, cars: [...state.cars, ...action.payload] };
+    case "ADD_CATEGORY":
+      return { ...state, category: [...state.category, ...action.payload] };
     default:
       return state;
   }
