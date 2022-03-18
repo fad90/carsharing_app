@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./content.module.scss";
-import location from '../../assets/svg/Group.svg'
+import location from "../../assets/svg/Group.svg";
+import { Link } from "react-router-dom";
 
 export default function Content() {
   return (
@@ -18,7 +19,11 @@ export default function Content() {
         <h1 className={styles.title}>Каршеринг</h1>
         <h2 className={styles.subtitle}>Need for drive</h2>
         <p className={styles.text}>Поминутная аренда авто твоего города</p>
-        <button className={styles.button}>Забронировать</button>
+        <Link to="/order/location">
+          <button className={styles.button}>
+            Забронировать
+          </button>
+        </Link>
       </main>
       <footer className={styles.footer}>
         <p className={styles.copyright}>© 2016-2019 «Need for drive»</p>
