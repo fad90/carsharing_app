@@ -54,6 +54,11 @@ export const cityText = (target) => ({
   payload: target,
 });
 
+export const pointText = (target) => ({
+  type: "POINT_TEXT",
+  payload: target,
+});
+
 export const addCars = (carsArray) => ({
   type: "ADD_CARS",
   payload: carsArray,
@@ -63,3 +68,13 @@ export const addCategory = (categoryArray) => ({
   type: "ADD_CATEGORY",
   payload: categoryArray,
 });
+
+export const addCity = (city) => ({
+  type: "ADD_CITY",
+  payload: city,
+})
+
+export const addPoint = (point) => ({
+  type: "ADD_POINT",
+  payload: point,
+})

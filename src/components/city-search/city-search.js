@@ -10,6 +10,7 @@ import { addCities } from "../../redux/actions";
 import { openCity } from "../../redux/actions";
 import { inputCity } from "../../redux/selectors";
 import { cityText } from "../../redux/actions";
+import { addCity } from "../../redux/actions";
 
 export default function CitySearch() {
   const dispatch = useDispatch();
@@ -37,7 +38,8 @@ export default function CitySearch() {
     const selectedCity = e.target.innerText;
     dispatch(cityText(selectedCity));
     dispatch(openCity());
-  }
+    dispatch(addCity(selectedCity))
+  };
 
   return (
     <div className={styles.city}>
@@ -58,7 +60,11 @@ export default function CitySearch() {
         }
       >
         {allCities.map((item, index) => (
-          <div className={styles.dropdown_item} key={`${item.id}${index}`} onClick={selectCity}>
+          <div
+            className={styles.dropdown_item}
+            key={`${item.id}${index}`}
+            onClick={selectCity}
+          >
             {item.name}
           </div>
         ))}

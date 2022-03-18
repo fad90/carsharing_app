@@ -1,11 +1,21 @@
 .model {
   width: 100%;
-  padding: 32px 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #121212;
+}
+.price {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
 }
 .categories {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+  margin: 32px 0 48px 0;
 }
 .category {
   display: flex;
@@ -26,7 +36,13 @@
   line-height: 16px;
   color: #999999;
 }
-
+.cars {
+  height: 100%;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
 .models {
   display: flex;
   flex-wrap: wrap;
@@ -34,8 +50,11 @@
 .card {
   padding: 16px;
   width: 50%;
+  border: 1px solid #EEEEEE;
 }
 .img {
   max-width: 256px;
   width: 100%;
+  margin-left: auto;
+  display: block;
 }

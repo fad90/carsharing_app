@@ -10,7 +10,7 @@
   color: #121212;
 }
 .info {
-    margin: 26px 0 32px 0;
+  margin: 10px 0 26px 0;
 }
 .button {
   background: #eeeeee;
@@ -22,4 +22,34 @@
   text-align: center;
   color: #ffffff;
   padding: 12px 0;
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 16px 0;
+}
+.dot {
+  flex-grow: 1;
+  border-bottom: 2px dotted #999;
+  margin: 0 12px 4px;
+}
+.name {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
+  display: block;
+  text-align: end;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: end;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
 }
