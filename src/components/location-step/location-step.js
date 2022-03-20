@@ -1,7 +1,7 @@
 import styles from "./location-step.module.scss";
 import CitySearch from "../city-search";
 import PickupPoint from "../pickup-point";
-import map from "../../assets/images/map.png"
+import map from "../../assets/images/map.png";
 
 export default function LocationStep() {
   return (

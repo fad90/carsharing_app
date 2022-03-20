@@ -20,11 +20,9 @@ export default function PickupPoint() {
   const selectedCity = useSelector(inputCity);
   const input = useSelector(inputPoint);
 
-  // const [input, setInput] = useState("");
-
   const changeHandler = (event) => {
     const target = event.target.value;
-    dispatch(pointText(target))
+    dispatch(pointText(target));
   };
 
   useEffect(() => {
@@ -42,8 +40,8 @@ export default function PickupPoint() {
     const selectedPoint = e.target.innerText;
     dispatch(pointText(selectedPoint));
     dispatch(openPoint());
-    dispatch(addPoint(selectedPoint))
-  }
+    dispatch(addPoint(selectedPoint));
+  };
 
   return (
     <div className={styles.point}>
@@ -67,7 +65,11 @@ export default function PickupPoint() {
           ? AllPoints.filter(
               (city) => city.cityId && city.cityId.name === selectedCity
             ).map((item, index) => (
-              <div className={styles.dropdown_item} key={`${item.id}${index}`} onClick={selectPoint}>
+              <div
+                className={styles.dropdown_item}
+                key={`${item.id}${index}`}
+                onClick={selectPoint}
+              >
                 {item.address}
               </div>
             ))

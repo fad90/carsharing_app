@@ -38,7 +38,7 @@ export default function CitySearch() {
     const selectedCity = e.target.innerText;
     dispatch(cityText(selectedCity));
     dispatch(openCity());
-    dispatch(addCity(selectedCity))
+    dispatch(addCity(selectedCity));
   };
 
   return (

@@ -34,12 +34,12 @@ export const firstSlide = (first) => ({
 export const addCities = (citiesArray) => ({
   type: "ADD_CITIES",
   payload: citiesArray,
-})
+});
 
 export const addPoints = (pointsArray) => ({
   type: "ADD_POINTS",
   payload: pointsArray,
-})
+});
 
 export const openCity = () => ({
   type: "OPEN_CITY",
@@ -72,9 +72,34 @@ export const addCategory = (categoryArray) => ({
 export const addCity = (city) => ({
   type: "ADD_CITY",
   payload: city,
-})
+});
 
 export const addPoint = (point) => ({
   type: "ADD_POINT",
   payload: point,
-})
+});
+
+export const setCategory = (name) => ({
+  type: "SET_CATEGORY",
+  payload: name,
+});
+
+export const selectModel = (model) => ({
+  type: "SELECT_MODEL",
+  payload: model,
+});
+
+export const selectMinPrice = (minprice) => ({
+  type: "SELECT_MINPRICE",
+  payload: minprice,
+});
+
+export const selectMaxPrice = (maxprice) => ({
+  type: "SELECT_MAXPRICE",
+  payload: maxprice,
+});
+
+export const selectCarId = (id) => ({
+  type: "SELECTCAR_ID",
+  payload: id,
+});

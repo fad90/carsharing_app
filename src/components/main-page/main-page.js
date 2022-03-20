@@ -1,21 +1,14 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
-import styles from './main-page.module.scss';
+import styles from "./main-page.module.scss";
 
-
-import Content from '../content';
-import Sidebar from '../sidebar';
-import Slider from '../slider';
-import BurgerMenu from '../burger-menu'
+import Content from "../content";
+import Slider from "../slider";
 
 export default function MainPage() {
   return (
-      <div className={styles.main}>
-        {/* <Sidebar /> */}
-        {/* <Outlet /> */}
-        <Content />
-        <Slider />
-        {/* <BurgerMenu /> */}
-      </div>
+    <div className={styles.main}>
+      <Content />
+      <Slider />
+    </div>
   );
 }

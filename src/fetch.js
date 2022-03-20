@@ -6,13 +6,13 @@ export async function getResource(url) {
     headers: {
       "Content-Type": "application/json",
       "X-Api-Factory-Application-Id": "5e25c641099b810b946c5d5b",
-    }
+    },
   });
   return await res.json();
 }
 
 export function getCities() {
-    return getResource("/db/city");
+  return getResource("/db/city");
 }
 
 export function getPoints() {

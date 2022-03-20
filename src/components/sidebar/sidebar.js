@@ -14,7 +14,7 @@ export default function Sidebar() {
   return (
     <>
       <button className={styles.hamburger} onClick={menuOpen}>
-        <BurgerLogo className={styles.logo}/>
+        <BurgerLogo className={styles.logo} />
       </button>
       <div className={styles.sidebar}>
         <div className={styles.language}>

@@ -20,9 +20,7 @@ export default function Content() {
         <h2 className={styles.subtitle}>Need for drive</h2>
         <p className={styles.text}>Поминутная аренда авто твоего города</p>
         <Link to="/order/location">
-          <button className={styles.button}>
-            Забронировать
-          </button>
+          <button className={styles.button}>Забронировать</button>
         </Link>
       </main>
       <footer className={styles.footer}>

@@ -5,9 +5,9 @@ const defaultState = {
 export const burgerReducer = (state = defaultState, action) => {
   switch (action.type) {
     case "OPEN_MENU":
-      return {...state, menuActive: true};
+      return { ...state, menuActive: true };
     case "CLOSE_MENU":
-      return {...state, menuActive: false};
+      return { ...state, menuActive: false };
     default:
       return state;
   }
