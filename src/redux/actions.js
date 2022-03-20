@@ -6,6 +6,10 @@ export const openMenu = () => ({
   type: "OPEN_MENU",
 });
 
+export const changeLang = () => ({
+  type: "CHANGE_LANG",
+});
+
 export const nextSlide = () => ({
   type: "NEXT_SLIDE",
   payload: 1,
@@ -102,4 +106,19 @@ export const selectMaxPrice = (maxprice) => ({
 export const selectCarId = (id) => ({
   type: "SELECTCAR_ID",
   payload: id,
+});
+
+export const setColor = (color) => ({
+  type: "SET_COLOR",
+  payload: color,
+});
+
+export const addRate = (rate) => ({
+  type: "ADD_RATE",
+  payload: rate,
+});
+
+export const setRate = (rate) => ({
+  type: "SET_RATE",
+  payload: rate,
 });

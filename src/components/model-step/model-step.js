@@ -27,13 +27,14 @@ export default function ModelStep() {
     getFunctions.getCars().then((data) => {
       const allCars = data.data;
       dispatch(addCars(allCars));
+      console.log(allCars)
     });
 
     getFunctions.getCategory().then((data) => {
       const allCategory = data.data;
       dispatch(addCategory(allCategory));
     });
-  }, [dispatch]);
+  }, []);
 
   const handleClick = (category) => () => {
     dispatch(setCategory(category));

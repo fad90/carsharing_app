@@ -12,6 +12,10 @@ const defaultState = {
     priceMax: "",
     id: "",
   },
+  addition: {
+    color: "",
+    rate: "",
+  },
 };
 
 export const orderReducer = (state = defaultState, action) => {
@@ -49,6 +53,16 @@ export const orderReducer = (state = defaultState, action) => {
       return {
         ...state,
         selectedCar: { ...state.selectedCar, id: action.payload },
+      };
+    case "SET_COLOR":
+      return {
+        ...state,
+        addition: { ...state.addition, color: action.payload },
+      };
+    case "SET_RATE":
+      return {
+        ...state,
+        addition: { ...state.addition, rate: action.payload },
       };
     default:
       return state;

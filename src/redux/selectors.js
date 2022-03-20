@@ -1,6 +1,8 @@
 export const active = (state) => state.burgerReducer.menuActive;
 export const current = (state) => state.sliderReducer.current;
 
+export const language = (state) => state.burgerReducer.EngLanguage;
+
 export const cities = (state) => state.dataReducer.cities;
 export const points = (state) => state.dataReducer.points;
 
@@ -24,3 +26,8 @@ export const selectedPriceMin = (state) =>
 export const selectedPriceMax = (state) =>
   state.orderReducer.selectedCar.priceMax;
 export const selectedCarId = (state) => state.orderReducer.selectedCar.id;
+
+export const color = (state) => state.orderReducer.addition.color;
+export const selectedRate = (state) => state.orderReducer.addition.rate;
+
+export const rate = (state) => state.dataReducer.rate;

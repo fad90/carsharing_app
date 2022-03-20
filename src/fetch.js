@@ -26,3 +26,8 @@ export function getCars() {
 export function getCategory() {
   return getResource("/db/category");
 }
+
+export function getRate() {
+  return getResource("/db/rate");
+}
+

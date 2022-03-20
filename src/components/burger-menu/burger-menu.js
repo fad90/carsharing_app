@@ -3,6 +3,8 @@ import styles from "./burger-menu.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { closeMenu } from "../../redux/actions";
 import { active } from "../../redux/selectors";
+import { language } from "../../redux/selectors";
+import { changeLang } from "../../redux/actions";
 
 import cross from "../../assets/svg/cross.svg";
 import { ReactComponent as TelegramLogo } from "../../assets/svg/telegram.svg";
@@ -12,9 +14,14 @@ import { ReactComponent as InstagramLogo } from "../../assets/svg/Instagram.svg"
 export default function BurgerMenu() {
   const dispatch = useDispatch();
   const menuActive = useSelector(active);
+  const EngLanguage = useSelector(language);
 
   const menuClose = () => {
     dispatch(closeMenu());
+  };
+
+  const changeLanguage = () => {
+    dispatch(changeLang());
   };
 
   return (
@@ -62,7 +69,9 @@ export default function BurgerMenu() {
             </a>
           </div>
           <div className={styles.language}>
-            <button className={styles.language_button}>Eng</button>
+            <button className={styles.language_button} onClick={changeLanguage}>
+              {EngLanguage ? "Eng" : "Рус"}
+            </button>
           </div>
         </div>
       </div>
