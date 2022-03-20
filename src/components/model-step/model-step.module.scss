@@ -1,0 +1,75 @@
+.model {
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #121212;
+  overflow-y: hidden;
+}
+.price {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+}
+.categories {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 32px 0 48px 0;
+}
+.category {
+  display: flex;
+  margin-right: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+.category_circle {
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  border: 1px solid #999999;
+  border-radius: 50px;
+  &.selected_circle {
+    border: 3px solid #0ec261;
+  }
+}
+
+.category_text {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+  &.category_selected {
+    color: black;
+  }
+}
+.cars {
+  max-height: 100%;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+.models {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  padding: 16px;
+  width: 50%;
+  border: 1px solid #eeeeee;
+  &:hover {
+    border: 1px solid #999999;
+  }
+  &.card_selected {
+    border: 1px solid #0ec261;
+  }
+}
+.img {
+  max-width: 256px;
+  width: 100%;
+  margin-left: auto;
+  display: block;
+}
