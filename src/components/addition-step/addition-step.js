@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as getFunctions from "../../fetch";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { ReactComponent as CheckMark } from "../../assets/svg/check-mark.svg";
 
 import { selectedCarId } from "../../redux/selectors";
 import { cars } from "../../redux/selectors";
@@ -14,6 +15,10 @@ import { addRate } from "../../redux/actions";
 import { rate } from "../../redux/selectors";
 import { setRate } from "../../redux/actions";
 import { selectedRate } from "../../redux/selectors";
+import { services } from "../../redux/selectors";
+import { selectOptions } from "../../redux/actions";
+import { dateFromSelector } from "../../redux/selectors";
+import { dateToSelector } from "../../redux/selectors";
 
 import { registerLocale, setDefaultLocale } from "react-datepicker";
 import ru from "date-fns/locale/ru";
@@ -26,12 +31,14 @@ export default function AdditionStep() {
   const selectedColor = useSelector(color);
   const allRates = useSelector(rate);
   const clickedRate = useSelector(selectedRate);
+  const additionOptions = useSelector(services);
+  const dateFrom = useSelector(dateFromSelector)
+  const dateTo = useSelector(dateToSelector)
 
-  const [startDate, setStartDate] = useState(new Date("2022/02/08"));
-  const [endDate, setEndDate] = useState(new Date("2022/02/10"));
+  const [startDate, setStartDate] = useState(dateFrom);
+  const [endDate, setEndDate] = useState(dateTo);
 
   const handleClick = (color) => () => {
-    console.log(color);
     dispatch(setColor(color));
   };
 
@@ -40,11 +47,28 @@ export default function AdditionStep() {
       const rate = data.data;
       dispatch(addRate(rate));
     });
+    // getFunctions.getOrder().then((data) => {
+    //   const order = data.data;
+    //   console.log(Object.entries(order));
+    // });
   }, []);
 
   const handleRate = (rate) => () => {
     dispatch(setRate(rate));
   };
+
+  const selectCheckBox = (option) => () => {
+    console.log([option]);
+    dispatch(
+      selectOptions({
+        [option]: {
+          name: additionOptions[option].name,
+          checked: !additionOptions[option].checked,
+        },
+      })
+    );
+  };
+
   return (
     <div className={styles.addition}>
       <div className={styles.colors}>
@@ -69,7 +93,11 @@ export default function AdditionStep() {
         {allCars
           .filter((car) => car.id === selectedCar)[0]
           .colors.map((color, index) => (
-            <div className={styles.color} onClick={handleClick(color)}>
+            <div
+              className={styles.color}
+              onClick={handleClick(color)}
+              key={color + index}
+            >
               <div
                 className={
                   selectedColor === color
@@ -93,28 +121,29 @@ export default function AdditionStep() {
         <div className={styles.date_wrap}>
           <div className={styles.date_text}>C:</div>
           <DatePicker
-            locale="ru"
+            className={styles.date_start}
             selected={startDate}
             onChange={(date) => setStartDate(date)}
-            selectsStart
-            startDate={startDate}
-            endDate={endDate}
-            className={styles.date_start}
-            dateFormat=" d. MM. yyyy "
+            locale="ru-RU"
+            showTimeSelect
+            timeFormat="HH:mm"
+            timeIntervals={30}
+            dateFormat="dd.MM.yyyy HH:mm"
+            placeholderText="Введите дату и время"
           />
         </div>
         <div className={styles.date_wrap}>
           <div className={styles.date_text}>По:</div>
           <DatePicker
-            locale="ru"
+            className={styles.date_end}
             selected={endDate}
             onChange={(date) => setEndDate(date)}
-            selectsEnd
-            startDate={startDate}
-            endDate={endDate}
-            minDate={startDate}
-            className={styles.date_end}
-            dateFormat=" d. MM. yyyy "
+            locale="ru-RU"
+            showTimeSelect
+            timeFormat="HH:mm"
+            timeIntervals={30}
+            dateFormat="dd.MM.yyyy HH:mm"
+            placeholderText="Введите дату и время"
           />
         </div>
       </div>
@@ -126,6 +155,7 @@ export default function AdditionStep() {
             <div
               className={styles.rate}
               onClick={handleRate(item.rateTypeId.name)}
+              key={item.id + index}
             >
               <div
                 className={
@@ -143,6 +173,19 @@ export default function AdditionStep() {
               >{`${item.rateTypeId.name}, ${item.price}`}</div>
             </div>
           ))}
+      </div>
+      <div className={styles.services}>
+        <div className={styles.services_text}>Доп услуги</div>
+        <div className={styles.services_wrapper}>
+          {Object.entries(additionOptions).map(([option, value]) => (
+            <div className={styles.checkbox} onClick={selectCheckBox(option)}>
+              <div className={styles.checkbox_square}>
+                {value.checked && <CheckMark className={styles.check_mark} />}
+              </div>
+              <div className={styles.checkbox_name}>{value.name}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

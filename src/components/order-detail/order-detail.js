@@ -6,6 +6,7 @@ import { point } from "../../redux/selectors";
 import { selectedModel } from "../../redux/selectors";
 import { selectedPriceMin } from "../../redux/selectors";
 import { selectedPriceMax } from "../../redux/selectors";
+import { color } from "../../redux/selectors";
 
 export default function OrderDetail() {
   const totalCity = useSelector(city);
@@ -13,6 +14,8 @@ export default function OrderDetail() {
   const model = useSelector(selectedModel);
   const priceMin = useSelector(selectedPriceMin);
   const priceMax = useSelector(selectedPriceMax);
+  const selectedColor = useSelector(color);
+
   return (
     <div className={styles.order}>
       <div className={styles.title}>Ваш заказ</div>
@@ -37,7 +40,22 @@ export default function OrderDetail() {
                 <div>{model}</div>
               </div>
             </div>
+          </>
+        ) : null}
+        {selectedColor ? (
+          <>
+            <div className={styles.wrap}>
+              <div className={styles.name}>Цвет</div>
+              <div className={styles.dot}></div>
+              <div className={styles.item}>
+                <div>{selectedColor}</div>
+              </div>
+            </div>
+          </>
+        ) : null}
 
+        {model ? (
+          <>
             <div className={styles.price}>
               <span className={styles.price_title}>Цена: </span>
               {`от ${priceMin} до ${priceMax}`}

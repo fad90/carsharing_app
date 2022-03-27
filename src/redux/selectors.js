@@ -31,3 +31,8 @@ export const color = (state) => state.orderReducer.addition.color;
 export const selectedRate = (state) => state.orderReducer.addition.rate;
 
 export const rate = (state) => state.dataReducer.rate;
+
+export const services = (state) => state.orderReducer.addition.options;
+
+export const dateFromSelector = (state) => state.orderReducer.addition.dateFrom;
+export const dateToSelector = (state) => state.orderReducer.addition.dateTo;

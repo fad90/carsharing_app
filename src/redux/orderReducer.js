@@ -15,6 +15,13 @@ const defaultState = {
   addition: {
     color: "",
     rate: "",
+    dateFrom: null,
+    dateTo: null,
+    options: {
+      fullTank: { name: "Полный бак, 500р", checked: false },
+      childChair: { name: "Детское кресло, 200р", checked: false },
+      rightWheel: { name: "Правый руль, 1600р", checked: false },
+    },
   },
 };
 
@@ -63,6 +70,25 @@ export const orderReducer = (state = defaultState, action) => {
       return {
         ...state,
         addition: { ...state.addition, rate: action.payload },
+      };
+    case "SELECT_CHECKBOX":
+      return {
+        ...state,
+        addition: {
+          ...state.addition,
+          options: { ...state.addition.options, ...action.payload },
+        },
+      };
+    case "SET_DATE_FROM":
+      return {
+        ...state,
+        addition: { ...state.addition, dateFrom: action.payload },
+      };
+
+    case "SET_DATE_TO":
+      return {
+        ...state,
+        addition: { ...state.addition, dateTo: action.payload },
       };
     default:
       return state;

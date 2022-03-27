@@ -31,3 +31,9 @@ export function getRate() {
   return getResource("/db/rate");
 }
 
+export function getOrder() {
+  return getResource("/db/order");
+  // "5fd91add935d4e0be16a3c4b"
+  // "600fe367ad015e0bb6997d5d"
+}
+

@@ -122,3 +122,18 @@ export const setRate = (rate) => ({
   type: "SET_RATE",
   payload: rate,
 });
+
+export const selectOptions = (option) => ({
+  type: "SELECT_CHECKBOX",
+  payload: option,
+});
+
+export const setDateToAction = (date) => ({
+  type: "SET_DATE_TO",
+  payload: date,
+});
+
+export const setDateFromAction = (date) => ({
+  type: "SET_DATE_FROM",
+  payload: date,
+});
