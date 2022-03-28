@@ -1,0 +1,136 @@
+.addition {
+  width: 100%;
+  padding: 32px 0;
+  overflow: auto;
+}
+.colors {
+  display: flex;
+}
+.color {
+  display: flex;
+  margin-right: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+.color_circle {
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  border: 1px solid #999999;
+  border-radius: 50px;
+  &.selected_circle {
+    border: 3px solid #0ec261;
+  }
+}
+.color_text {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+  &.text_selected {
+    color: black;
+  }
+}
+.date {
+  margin-top: 32px;
+  width: 253px;
+}
+.date_wrap {
+  display: flex;
+  margin-right: 8px;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.date_text {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
+}
+.date_start {
+  outline: none;
+  border: none;
+  border-bottom: #999999 solid 1px;
+
+  width: 224px;
+  padding: 0 8px 3px;
+  margin-left: 8px;
+}
+.date_end {
+  outline: none;
+  border: none;
+  border-bottom: #999999 solid 1px;
+
+  width: 224px;
+  padding: 0 8px 3px;
+  margin-left: 8px;
+}
+.rate {
+  display: flex;
+  margin-right: 16px;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.rate_circle {
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  border: 1px solid #999999;
+  border-radius: 50px;
+  &.rate_circle_selected {
+    border: 3px solid #0ec261;
+  }
+}
+.rate_text {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+  &.rate_text_selected {
+    color: black;
+  }
+}
+.rates {
+  margin: 32px 0;
+}
+.rates_text {
+  margin-bottom: 16px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
+}
+.services {
+}
+.services_text {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
+  margin-bottom: 16px;
+}
+.services_wrapper {
+}
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.checkbox_square {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  border: 1px solid #999;
+  cursor: pointer;
+}
+.checkbox_name {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+}
+.check_mark {
+  position: absolute;
+}
