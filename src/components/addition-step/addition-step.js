@@ -19,6 +19,8 @@ import { services } from "../../redux/selectors";
 import { selectOptions } from "../../redux/actions";
 import { dateFromSelector } from "../../redux/selectors";
 import { dateToSelector } from "../../redux/selectors";
+import { setDateFromAction } from "../../redux/actions";
+import { setDateToAction } from "../../redux/actions";
 
 import { registerLocale, setDefaultLocale } from "react-datepicker";
 import ru from "date-fns/locale/ru";
@@ -68,6 +70,14 @@ export default function AdditionStep() {
       })
     );
   };
+
+  // const dateFromBlur = () => {
+  //   dispatch(setDateFromAction(startDate))
+  // }
+
+  // const dateToBlur = () => {
+  //   dispatch(setDateToAction(endDate))
+  // }
 
   return (
     <div className={styles.addition}>
@@ -122,9 +132,9 @@ export default function AdditionStep() {
           <div className={styles.date_text}>C:</div>
           <DatePicker
             className={styles.date_start}
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
-            locale="ru-RU"
+            selected={dateFrom}
+            onChange={(date) => dispatch(setDateFromAction(date))}
+            // locale="ru-RU"
             showTimeSelect
             timeFormat="HH:mm"
             timeIntervals={30}
@@ -136,9 +146,9 @@ export default function AdditionStep() {
           <div className={styles.date_text}>По:</div>
           <DatePicker
             className={styles.date_end}
-            selected={endDate}
-            onChange={(date) => setEndDate(date)}
-            locale="ru-RU"
+            selected={dateTo}
+            onChange={(date) => dispatch(setDateToAction(date))}
+            // locale="ru-RU"
             showTimeSelect
             timeFormat="HH:mm"
             timeIntervals={30}
@@ -177,8 +187,8 @@ export default function AdditionStep() {
       <div className={styles.services}>
         <div className={styles.services_text}>Доп услуги</div>
         <div className={styles.services_wrapper}>
-          {Object.entries(additionOptions).map(([option, value]) => (
-            <div className={styles.checkbox} onClick={selectCheckBox(option)}>
+          {Object.entries(additionOptions).map(([option, value], index) => (
+            <div className={styles.checkbox} onClick={selectCheckBox(option)} key={index}>
               <div className={styles.checkbox_square}>
                 {value.checked && <CheckMark className={styles.check_mark} />}
               </div>

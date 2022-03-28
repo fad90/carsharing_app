@@ -8,8 +8,6 @@ import { changeLang } from "../../redux/actions";
 
 import cross from "../../assets/svg/cross.svg";
 import { ReactComponent as TelegramLogo } from "../../assets/svg/telegram.svg";
-import { ReactComponent as FacebookLogo } from "../../assets/svg/Facebook.svg";
-import { ReactComponent as InstagramLogo } from "../../assets/svg/Instagram.svg";
 
 export default function BurgerMenu() {
   const dispatch = useDispatch();
@@ -60,12 +58,6 @@ export default function BurgerMenu() {
           <div className={styles.social}>
             <a href="#" className={styles.social_link}>
               <TelegramLogo className={styles.social_logo} />
-            </a>
-            <a href="#" className={styles.social_link}>
-              <FacebookLogo className={styles.social_logo} />
-            </a>
-            <a href="#" className={styles.social_link}>
-              <InstagramLogo className={styles.social_logo} />
             </a>
           </div>
           <div className={styles.language}>

@@ -7,6 +7,8 @@ import { selectedModel } from "../../redux/selectors";
 import { selectedPriceMin } from "../../redux/selectors";
 import { selectedPriceMax } from "../../redux/selectors";
 import { color } from "../../redux/selectors";
+import { dateFromSelector } from "../../redux/selectors";
+import { dateToSelector } from "../../redux/selectors";
 
 export default function OrderDetail() {
   const totalCity = useSelector(city);
@@ -15,6 +17,14 @@ export default function OrderDetail() {
   const priceMin = useSelector(selectedPriceMin);
   const priceMax = useSelector(selectedPriceMax);
   const selectedColor = useSelector(color);
+  const dateFrom = useSelector(dateFromSelector);
+  const dateTo = useSelector(dateToSelector);
+
+  const date = dateTo - dateFrom;
+
+  const hours = Math.floor(date / 3600);
+
+  console.log(hours);
 
   return (
     <div className={styles.order}>
@@ -49,6 +59,18 @@ export default function OrderDetail() {
               <div className={styles.dot}></div>
               <div className={styles.item}>
                 <div>{selectedColor}</div>
+              </div>
+            </div>
+          </>
+        ) : null}
+
+        {dateFrom && dateTo ? (
+          <>
+            <div className={styles.wrap}>
+              <div className={styles.name}>Длительность аренды</div>
+              <div className={styles.dot}></div>
+              <div className={styles.item}>
+                <div>{dateTo - dateFrom}</div>
               </div>
             </div>
           </>
